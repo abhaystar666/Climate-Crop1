@@ -1,115 +1,223 @@
  <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClimateCrop</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+   <head>
+     <meta charset="UTF-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <meta
+       name="description"
+       content="ClimateCrop helps farmers understand climate trends and choose resilient crops using NASA POWER data."
+     />
+     <title>ClimateCrop | Climate-Smart Crop Planning</title>
+     <link rel="stylesheet" href="style.css" />
+   </head>
+   <body>
+     <div class="page-shell">
+       <header class="topbar">
+         <div class="container nav">
+           <div class="brand" aria-label="ClimateCrop brand">
+             <span class="brand-mark">🌱</span>
+             <span>ClimateCrop</span>
+           </div>
 
-<body>
+           <nav class="main-nav" aria-label="Main navigation">
+             <a href="#overview">Overview</a>
+             <a href="#insights">Insights</a>
+             <a href="#crops">Crops</a>
+             <a href="#impact">Impact</a>
+           </nav>
 
-    <header>
-        <h1>🌱 ClimateCrop</h1>
-        <p>Choose the right crop for a changing climate.</p>
-    </header>
+           <a class="nav-cta" href="#insights">Explore data</a>
+         </div>
+       </header>
 
-    <main>
+       <main>
+         <section id="overview" class="hero container">
+           <div class="hero-copy">
+             <p class="eyebrow">Climate-smart agriculture</p>
+             <h1>Plan resilient crops for a changing climate.</h1>
+             <p class="lead">
+               ClimateCrop compares historical and recent rainfall and temperature patterns
+               to help farmers make practical, data-driven crop decisions before planting.
+             </p>
 
-        <section class="intro">
-            <h2>Understand Your Farm's Climate</h2>
-            <p>
-                ClimateCrop uses NASA climate data to compare
-                historical and recent rainfall and temperature.
-            </p>
+             <div class="cta-row">
+               <a class="primary-btn" href="#insights">View climate insights</a>
+               <a class="secondary-btn" href="#crops">Explore crops</a>
+             </div>
+
+             <ul class="mini-stats" aria-label="Project metrics">
+               <li>
+                 <strong>15+</strong>
+                 <span>climate indicators</span>
+               </li>
+               <li>
+                 <strong>3</strong>
+                 <span>priority crop studies</span>
+               </li>
+               <li>
+                 <strong>100%</strong>
+                 <span>local decision support</span>
+               </li>
+             </ul>
+           </div>
+
+           <div class="hero-visual" aria-label="Climate trend preview">
+             <div class="forecast-card">
+               <div class="card-header">
+                 <span>Climate shift index</span>
+                 <span class="status-pill">Live</span>
+               </div>
+
+               <div id="shiftScore" class="big-number">--</div>
+
+               <div class="metric-grid">
+                 <div>
+                   <span>Rainfall change</span>
+                   <strong id="rainfallChangeCard">--</strong>
+                 </div>
+                 <div>
+                   <span>Temp change</span>
+                   <strong id="temperatureChangeCard">--</strong>
+                 </div>
+               </div>
+
+               <img src="images/farm.jpg" alt="Farm field at sunrise" />
+             </div>
+           </div>
         </section>
 
-        <section class="location">
-            <h2>Farm Location</h2>
+         <section id="insights" class="container section">
+           <div class="section-heading">
+             <p class="eyebrow">Climate dashboard</p>
+             <h2>Understand your farm's climate fingerprint.</h2>
+           </div>
 
-            <label for="location">Select location:</label>
+           <div class="selector-panel">
+             <label for="location">Farm location</label>
+             <select id="location" aria-label="Select farm location">
+               <option value="warud">Warud, Maharashtra</option>
+               <option value="akola">Akola, Maharashtra</option>
+               <option value="nagpur">Nagpur, Maharashtra</option>
+               <option value="parbhani">Parbhani, Maharashtra</option>
+             </select>
+             <button id="getDataBtn" type="button">Load climate data</button>
+             <p id="status" class="status-text">
+               Click the button to compare recent rainfall and temperature patterns.
+             </p>
+           </div>
 
-            <select id="location">
-                <option value="warud">Warud, Maharashtra</option>
-            </select>
+           <div class="stats-grid">
+             <article class="info-card">
+               <span class="card-label">Historical rainfall</span>
+               <strong id="baselineRainfall">--</strong>
+               <small>2001–2020 average (mm/year)</small>
+             </article>
 
-            <button id="getDataBtn">
-                Get NASA Climate Data
-            </button>
+             <article class="info-card">
+               <span class="card-label">Recent rainfall</span>
+               <strong id="recentRainfall">--</strong>
+               <small>2021–2025 average (mm/year)</small>
+             </article>
 
-            <p id="status">Click the button to load climate data.</p>
+             <article class="info-card accent">
+               <span class="card-label">Rainfall change</span>
+               <strong id="rainfallChange">--</strong>
+               <small>Percentage change</small>
+             </article>
+
+             <article class="info-card accent-alt">
+               <span class="card-label">Temperature change</span>
+               <strong id="temperatureChange">--</strong>
+               <small>Degrees Celsius</small>
+             </article>
+           </div>
         </section>
 
-        <section class="dashboard">
-            <h2>Climate Shift Fingerprint</h2>
+         <section class="container section explanation-section" id="impact">
+           <div class="section-heading left">
+             <p class="eyebrow">What it means</p>
+             <h2>Climate signals that matter for cropping decisions.</h2>
+           </div>
 
-            <div class="cards">
-
-                <div class="card">
-                    <h3>Historical Rainfall</h3>
-                    <p id="baselineRainfall">--</p>
-                    <small>2001–2020 (mm/year)</small>
-                </div>
-
-                <div class="card">
-                    <h3>Recent Rainfall</h3>
-                    <p id="recentRainfall">--</p>
-                    <small>2021–2025 (mm/year)</small>
-                </div>
-
-                <div class="card">
-                    <h3>Rainfall Change</h3>
-                    <p id="rainfallChange">--</p>
-                    <small>Percentage change</small>
-                </div>
-
-                <div class="card">
-                    <h3>Temperature Change</h3>
-                    <p id="temperatureChange">--</p>
-                    <small>Degrees Celsius</small>
-                </div>
-
-            </div>
-        </section>
-
-        <section class="explanation">
-            <h2>What Does This Mean?</h2>
+           <div class="insight-panel">
             <p id="climateExplanation">
-                Your climate analysis will appear here after loading data.
+               Your climate analysis will appear here after the data is loaded.
             </p>
+           </div>
         </section>
 
-        <section class="crops">
-            <h2>Crops We Are Studying</h2>
+         <section class="container section feature-section">
+           <div class="section-heading">
+             <p class="eyebrow">How ClimateCrop helps</p>
+             <h2>From climate signals to smarter sowing decisions.</h2>
+           </div>
 
-            <div class="crop-container">
+           <div class="feature-grid">
+             <article class="feature-card">
+               <div class="feature-icon">📡</div>
+               <h3>Satellite climate data</h3>
+               <p>
+                 Pulls trusted NASA POWER observations to understand rainfall and thermal trends.
+               </p>
+             </article>
 
-                <div class="crop-card">
-                    <h3>🌿 Cotton</h3>
-                    <p>Study its water, soil and temperature requirements.</p>
-                </div>
+             <article class="feature-card">
+               <div class="feature-icon">🌾</div>
+               <h3>Crop suitability insights</h3>
+               <p>
+                 Highlights crops better suited to local climate stress, water availability, and heat.
+               </p>
+             </article>
 
-                <div class="crop-card">
-                    <h3>🌱 Soybean</h3>
-                    <p>Study its rainfall and soil requirements.</p>
-                </div>
+             <article class="feature-card">
+               <div class="feature-icon">💡</div>
+               <h3>Actionable planning</h3>
+               <p>
+                 Helps farmers decide which crops can be resilient under shifting rainfall or warming.
+               </p>
+             </article>
+           </div>
+         </section>
 
-                <div class="crop-card">
-                    <h3>🌾 Sorghum (Jowar)</h3>
-                    <p>Study its drought tolerance and water needs.</p>
-                </div>
+         <section id="crops" class="container section crop-section">
+           <div class="section-heading">
+             <p class="eyebrow">Crop portfolio</p>
+             <h2>Crops under study for climate resilience.</h2>
+           </div>
 
-            </div>
-        </section>
+           <div class="crop-grid">
+             <article class="crop-card">
+               <div class="crop-badge">Cotton</div>
+               <h3>🌿 Cotton</h3>
+               <p>Evaluated for moisture stress, heat tolerance, and seasonal rainfall requirements.</p>
+             </article>
 
-    </main>
+             <article class="crop-card">
+               <div class="crop-badge">Soybean</div>
+               <h3>🌱 Soybean</h3>
+               <p>Reviewed for rainfall variability, soil suitability, and climate-adjusted productivity.</p>
+             </article>
 
-    <footer>
-        <p>ClimateCrop | Powered by NASA POWER data</p>
-        <p>NASA climate estimates are not direct farm-level measurements.</p>
-    </footer>
+             <article class="crop-card">
+               <div class="crop-badge">Sorghum</div>
+               <h3>🌾 Sorghum (Jowar)</h3>
+               <p>Studied as a resilient option for dry spells, limited rainfall, and warmer conditions.</p>
+             </article>
+           </div>
+         </section>
+       </main>
+
+       <footer class="site-footer">
+         <div class="container footer-inner">
+           <div>
+             <strong>ClimateCrop</strong>
+             <p>Powered by NASA POWER climate data for better farm planning.</p>
+           </div>
+           <p>NASA climate estimates are not direct on-farm measurements.</p>
+         </div>
+       </footer>
+     </div>
 
     <script type="module" src="./script.js"></script>
-
-</body>
-</html>
+   </body>
+ </html>

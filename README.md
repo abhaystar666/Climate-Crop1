@@ -1,68 +1,77 @@
-🌱 ClimateCrop – Smart Crop Recommendation System
+# ClimateCrop
 
-About the Project
+ClimateCrop is a climate-smart web application designed to help farmers and agricultural planners understand how local rainfall and temperature patterns are changing over time. By comparing historical and recent climate data, it supports better crop selection and long-term field planning.
 
-ClimateCrop is a web-based application that helps farmers choose suitable crops according to climate conditions. It uses NASA POWER climate data to understand historical and recent rainfall and temperature patterns.
+## Project Goal
 
-Features
+The project uses NASA POWER climate data to analyze:
 
-- Select farm location.
-- Fetch climate data using NASA POWER API.
-- Analyze historical rainfall.
-- Analyze temperature patterns.
-- Display climate change information.
-- Help users understand suitable crop choices.
+- Historical rainfall trends
+- Recent temperature variation
+- Seasonal climate change and risk signals
+- Crop suitability recommendations for local agricultural conditions
 
-Technologies Used
+## Key Features
 
-- HTML
-- CSS
-- JavaScript
+- Select a farm location from supported districts in Maharashtra
+- Fetch climate data from the NASA POWER API
+- Compare historical and recent rainfall averages
+- Analyze temperature changes over time
+- Highlight climate patterns that affect crop planning
+- Present a cleaner, modern landing page that explains the project to users
+
+## Tech Stack
+
+- HTML5
+- CSS3
+- JavaScript (ES modules)
 - NASA POWER API
 - Visual Studio Code
 
-API Used
+## Project Structure
 
-NASA POWER API
-
-Website: https://power.larc.nasa.gov/
-
-The application uses NASA POWER climate data to retrieve environmental information.
-
-Project Structure
-
+```text
 ClimateCrop/
-│
 ├── index.html
 ├── style.css
 ├── script.js
 ├── README.md
-│
 ├── images/
 │   └── farm.jpg
-│
-└── js/
+├── js/
+│   ├── climate.js
+│   ├── crops.js
+│   └── nasa.js
+└── .git/
+```
 
-How to Run the Project
+## How to Run
 
-1. Download or open the ClimateCrop project folder.
-2. Open the folder in Visual Studio Code.
-3. Install the Live Server extension if needed.
-4. Open "index.html".
-5. Click Go Live.
-6. Select a farm location.
-7. Click Get NASA Climate Data.
+1. Open the project folder in Visual Studio Code.
+2. Install the Live Server extension if it is not already installed.
+3. Open `index.html`.
+4. Right-click the file and choose "Open with Live Server".
+5. Choose a location and click "Load climate data".
 
-Future Improvements
+## Data Source
 
-- Add more crop recommendations.
-- Display climate graphs and charts.
-- Support more farm locations.
-- Improve the user interface.
-- Provide more detailed climate analysis.
+This project uses NASA POWER (Prediction Of Worldwide Energy Resources):
 
-Data Source
+- Website: https://power.larc.nasa.gov/
+- Data used: rainfall and temperature observations for agricultural climate analysis
 
-NASA POWER – Prediction Of Worldwide Energy Resources.
+## Why This Project Matters
 
-https://power.larc.nasa.gov/
+Agriculture is highly sensitive to changing climate patterns. A small shift in rainfall or temperature can influence sowing decisions, crop health, and farm productivity. ClimateCrop aims to make these climate signals easier to understand and act on.
+
+## Future Improvements
+
+- Add more crop recommendation logic
+- Show graphs for rainfall and temperature over time
+- Support more districts and regions
+- Add an AI-assisted crop recommendation model
+- Improve mobile responsiveness and user experience further
+
+## Notes
+
+NASA climate data provides regional estimates and is useful for trend analysis, but it is not a substitute for farm-level sensor data or local agronomy advice.
