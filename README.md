@@ -79,7 +79,7 @@ Agriculture is highly sensitive to changing climate patterns. A small shift in r
 - Add an AI-assisted crop recommendation model
 - Improve mobile responsiveness and user experience further
 
-## Notes
+## AI Disclosure
 
 NASA climate data provides regional estimates and is useful for trend analysis, but it is not a substitute for farm-level sensor data or local agronomy advice.
 AI Usage Disclosure
