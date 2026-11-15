@@ -1,6 +1,13 @@
 # ClimateCrop
 
 ClimateCrop is a climate-smart web application designed to help farmers and agricultural planners understand how local rainfall and temperature patterns are changing over time. By comparing historical and recent climate data, it supports better crop selection and long-term field planning.
+## Team Details
+
+**Team Name:*Space Titan*
+|Pushkar Deshmukh | Frontend |
+| Abhay Katre | Backend |
+| Aviraj Patle|  API Integration |
+
 
 ## Project Goal
 
@@ -75,3 +82,26 @@ Agriculture is highly sensitive to changing climate patterns. A small shift in r
 ## Notes
 
 NASA climate data provides regional estimates and is useful for trend analysis, but it is not a substitute for farm-level sensor data or local agronomy advice.
+AI Usage Disclosure
+
+This project was developed with assistance from Generative AI tools.
+
+1. AI Tools Used
+
+- ChatGPT (OpenAI): Used for brainstorming, understanding technical concepts, debugging code, and assistance with API integration.
+
+2. AI-Assisted Components
+
+- API Integration: ChatGPT assisted in understanding and debugging JavaScript Fetch API code used to retrieve climate data from the NASA POWER API.
+- Code Debugging: AI assistance was used to identify and resolve coding errors.
+- Documentation: AI assisted in improving the clarity and structure of project documentation.
+
+3. Team's Contributions
+
+- Project planning, implementation, and integration were carried out by the team.
+- The team reviewed and tested the AI-assisted code.
+- Custom engineering, modifications, testing, and final implementation were performed by team members.
+
+4. Responsibility
+
+The team takes full responsibility for the project's source code, functionality, accuracy, and final implementation. AI-generated suggestions were reviewed and modified before use.
